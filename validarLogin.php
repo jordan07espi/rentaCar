@@ -1,39 +1,16 @@
 <?php
-$user=$_POST ['usuario'];
-$pass=$_POST['contraseña'];
 
-if(isset($user)){
-    //proceso de conexion a la base de datos
-    
-    //varable de conexion
-    $servername= "localhost";
-    $username= "root";
-    $password= "";
-    $dbname= "rentacar";
-    
-    //crear una conexion a la base de datos
-    $con = mysqli_connect($servername, $username, $password, $dbname) or die ("Error en la conexión");
-    //consultar si los datos son los que estan en la base
-    $consulta= "SELECT*FROM usuarios WHERE nombreUsuario='$user' AND contraseña = '$pass'";
-    //ejecutar la consulta
-    $resultados= mysqli_query($con, $consulta) or die (mysqli_connect_errno ());
-    //alamacenar los datos en un arreglo
-    $fila = mysqli_fetch_array($resultados);
-    //controlar si llegan datos desde la consulta
-    if($fila['id']==null){
-        //redirigir al login
-        header("location:indexLogin.html");
-    }else{
-        //crear la sesion
-        SESSION_START();
-        //definir las variables de sesion y redirigimos a una pagina de usuario
-        $_SESSION['id']= $fila['id'];
-        $_SESSION['nombre']= $fila['nombreUsuario'];
-        header("location:inicioAdmin.php");
-    }
+    #se recogen los datos que llegan desde el formulario
+    $user_for_login = array_filter($_POST,function($current){
+        return $current!=='Login';
+    },ARRAY_FILTER_USE_BOTH);
 
-}else{
-    header("location:indexLogin.html");
-}
+    var_dump($user_for_login);
+
+
+
+
+
+
 ?>
 
