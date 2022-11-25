@@ -6,7 +6,7 @@ if(isset($user)){
     //proceso de conexion a la base de datos
     
     //varable de conexion
-    $servername= "localhost";
+    $servername= "localhost:3308";
     $username= "root";
     $password= "";
     $dbname= "rentacar";
