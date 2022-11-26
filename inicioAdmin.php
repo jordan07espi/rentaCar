@@ -21,10 +21,10 @@ require_once 'controlador/inicioAdminControl.php';
                 <div class="collapse navbar-collapse" id="navbarScroll">
                     <ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 100px;">
                     <li class="nav-item">
-                        <a class="nav-link active; text-white" aria-current="page" href="inicioAdmin.php">Clientes</a>
+                        <a class="nav-link active; text-white" aria-current="page" href="inicioAdmin.php">clientes</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active; text-white" aria-current="page" href="usuariosAdmin.php">Usuarios</a>
+                        <a class="nav-link active; text-white" aria-current="page" href="usuariosAdmin.php">usarios</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link active; text-white" href="#">Alquiler</a>
