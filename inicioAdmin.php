@@ -44,6 +44,7 @@ require_once 'controlador/inicioAdminControl.php';
             <button class="btn btn-primary" >Nuevo Cliente</button>
         </a>
     </div>
+    <br>
     <div>
         <table class="table table-striped">
             <thead>

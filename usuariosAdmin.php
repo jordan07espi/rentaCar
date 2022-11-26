@@ -1,5 +1,5 @@
 <?php
-require_once 'controlador/inicioAdminControl.php';
+require_once 'controlador/usuariosControlAdmin.php';
 ?>
 
 <!DOCTYPE html>
@@ -40,15 +40,17 @@ require_once 'controlador/inicioAdminControl.php';
     </div>
     <br>
     <div>
-        <button class="btn btn-primary">Nuevo Cliente</button>
+        <button class="btn btn-primary">Nuevo Usuario</button>
     </div>
+    <br>
     <div>
         <table class="table table-striped">
-            <thead>
+            <thead class="bg-dark text-light">
             <tr>
                 <th scope="col">#</th>
                 <th scope="col">usuario</th>
                 <th scope="col">contraseña</th>
+                <th scope="col">Acciones</th>
             </tr>
             </thead>
             <tbody>
@@ -60,12 +62,12 @@ require_once 'controlador/inicioAdminControl.php';
                         echo '<td>' . $row['nombreUsuario'] .'</td>';
                         echo '<td>' . $row['contraseña'] . '</td>';
                         echo '<td>';
-                        echo '<a href="leer.php?id=' . $row['idCliente'] . '"> 
+                        echo '<a href="leer.php?id=' . $row['id'] . '"> 
                         <button type="button" class="btn btn-primary">
                         <i class="bi bi-pencil-square" ></i>
                         </button>
                         </a>';
-                        echo '<a href="#?id=' . $row['idCliente'] . '"> 
+                        echo '<a href="#?id=' . $row['id'] . '"> 
                         <button type="button" class="btn btn-danger">
                         <i class="bi bi-trash-fill"></i>
                         </button>
