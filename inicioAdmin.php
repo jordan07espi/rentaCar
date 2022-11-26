@@ -15,36 +15,27 @@ require_once 'controlador/inicioAdminControl.php';
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
 </head>
 <body>
-    <div>
-        <nav class="navbar navbar-expand bg-dark">
+        <nav class="navbar navbar-expand-lg bg-light">
             <div class="container-fluid">
                 <div class="collapse navbar-collapse" id="navbarScroll">
                     <ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 100px;">
                     <li class="nav-item">
-                        <a class="nav-link active; text-white" aria-current="page" href="inicioAdmin.php">Clientes</a>
+                        <a class="nav-link active" aria-current="page" href="#">Usuarios</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active; text-white" aria-current="page" href="usuariosAdmin.php">Usuarios</a>
+                        <a class="nav-link active" aria-current="page" href="#">Clientes</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active; text-white" href="#">Alquiler</a>
+                        <a class="nav-link active" href="#">Alquiler</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active; text-white" href="#">Autos</a>
+                        <a class="nav-link active" href="#">Autos</a>
                     </li>
                     </ul>
-                    <a class="navbar-brand" > <h4 class="fw-bold; text-white">Bienvenida</h4></a>
+                    <a class="navbar-brand" > <h4 class="fw-bold">Bienvenida</h4></a>
                 </div>
             </div>
         </nav>
-    </div>
-    <br>
-    <div>
-        <a href="nuevoClienteAdmin.php">
-            <button class="btn btn-primary" >Nuevo Cliente</button>
-        </a>
-    </div>
-    <div>
         <table class="table table-striped">
             <thead>
             <tr>
@@ -90,8 +81,6 @@ require_once 'controlador/inicioAdminControl.php';
                 ?>
         </tbody>
         </table>
-    </div>
-
 
 
 
