@@ -23,7 +23,11 @@ require_once 'controlador/inicioAdminControl.php';
                         <a class="nav-link active; text-white" aria-current="page" href="inicioAdmin.php">Clientes</a>
                     </li>
                     <li class="nav-item">
+<<<<<<< HEAD
                         <a class="nav-link active; text-white" aria-current="page" href="usuariosAdmin.php">Usuarios</a>
+=======
+                        <a class="nav-link active; text-white" aria-current="page" href="usuariosAdmin.php">Usarios</a>
+>>>>>>> Jordan
                     </li>
                     <li class="nav-item">
                         <a class="nav-link active" href="#">Alquiler</a>
