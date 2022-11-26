@@ -8,6 +8,7 @@ require_once 'controlador/inicioAdminControl.php';
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/navbar.css">
     <!-- CSS only -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
         <title>Bienvenida admin</title>
@@ -15,22 +16,20 @@ require_once 'controlador/inicioAdminControl.php';
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
 </head>
 <body>
-        <nav class="navbar navbar-expand-lg bg-light">
+    <div>
+        <nav class="navbar navbar-expand navbar-dark" id="navbar">
             <div class="container-fluid">
                 <div class="collapse navbar-collapse" id="navbarScroll">
+                <img src="./img/collab.png" alt="" width="100" height="50">
                     <ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 100px;">
                     <li class="nav-item">
                         <a class="nav-link active; text-white" aria-current="page" href="inicioAdmin.php">Clientes</a>
                     </li>
                     <li class="nav-item">
-<<<<<<< HEAD
                         <a class="nav-link active; text-white" aria-current="page" href="usuariosAdmin.php">Usuarios</a>
-=======
-                        <a class="nav-link active; text-white" aria-current="page" href="usuariosAdmin.php">Usarios</a>
->>>>>>> Jordan
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active" href="#">Alquiler</a>
+                        <a class="nav-link active; text-white" href="alquilerAdmin.php">Alquiler</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link active" href="#">Autos</a>
@@ -40,8 +39,17 @@ require_once 'controlador/inicioAdminControl.php';
                 </div>
             </div>
         </nav>
+    </div>
+    <br>
+    <div>
+        <a href="nuevoClienteAdmin.php">
+            <button class="btn" id="boton">Nuevo Cliente</button>
+        </a>
+    </div>
+    <br>
+    <div>
         <table class="table table-striped">
-            <thead>
+            <thead class="text-light" id="tabla">
             <tr>
                 <th scope="col">#</th>
                 <th scope="col">Nombre</th>

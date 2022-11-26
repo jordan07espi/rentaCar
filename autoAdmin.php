@@ -1,5 +1,5 @@
 <?php
-require_once 'controlador/usuariosAdminControl.php';
+require_once 'controlador/autoAdminControl.php';
 ?>
 
 <!DOCTYPE html>
@@ -11,7 +11,7 @@ require_once 'controlador/usuariosAdminControl.php';
     <link rel="stylesheet" href="./css/navbar.css">
     <!-- CSS only -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
-        <title>Bienvenida admin - Usuarios</title>
+        <title>Bienvenida admin</title>
     <!-- Option 1: Include in HTML -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
 </head>
@@ -32,7 +32,7 @@ require_once 'controlador/usuariosAdminControl.php';
                         <a class="nav-link active; text-white" href="alquilerAdmin.php">Alquiler</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active; text-white" href="#">Autos</a>
+                        <a class="nav-link active; text-white" href="autoAdmin.php">Autos</a>
                     </li>
                     </ul>
                     <a class="navbar-brand" > <h4 class="fw-bold; text-white">Bienvenida</h4></a>
@@ -42,7 +42,9 @@ require_once 'controlador/usuariosAdminControl.php';
     </div>
     <br>
     <div>
-        <button class="btn" id="boton">Nuevo Usuario</button>
+        <a href="#">
+            <button class="btn" id="boton">Nuevo Auto</button>
+        </a>
     </div>
     <br>
     <div>
@@ -50,8 +52,11 @@ require_once 'controlador/usuariosAdminControl.php';
             <thead class="text-light" id="tabla">
             <tr>
                 <th scope="col">#</th>
-                <th scope="col">usuario</th>
-                <th scope="col">contraseña</th>
+                <th scope="col">Marca</th>
+                <th scope="col">Placa</th>
+                <th scope="col">Tipo</th>
+                <th scope="col">Estado</th>
+                <th scope="col">Estado Alquiler</th>
                 <th scope="col">Acciones</th>
             </tr>
             </thead>
@@ -60,16 +65,19 @@ require_once 'controlador/usuariosAdminControl.php';
                     if($result -> num_rows > 0) {
                         while($row = $result -> fetch_assoc()){
                         echo '<tr>';
-                        echo '<td>' . $row['id'] . '</td>';
-                        echo '<td>' . $row['nombreUsuario'] .'</td>';
-                        echo '<td>' . $row['contraseña'] . '</td>';
+                        echo '<td>' . $row['idauto'] . '</td>';
+                        echo '<td>' . $row['marca'] .'</td>';
+                        echo '<td>' . $row['placa'] . '</td>';
+                        echo '<td>' . $row['tipo'] . '</td>';
+                        echo '<td>' . $row['estado'] . '</td>';
+                        echo '<td>' . $row['estadoAlquiler'] . '</td>';
                         echo '<td>';
-                        echo '<a href="leer.php?id=' . $row['id'] . '"> 
+                        echo '<a href="leer.php?id=' . $row['idauto'] . '"> 
                         <button type="button" class="btn btn-primary">
                         <i class="bi bi-pencil-square" ></i>
                         </button>
                         </a>';
-                        echo '<a href="#?id=' . $row['id'] . '"> 
+                        echo '<a href="#?id=' . $row['idauto'] . '"> 
                         <button type="button" class="btn btn-danger">
                         <i class="bi bi-trash-fill"></i>
                         </button>
