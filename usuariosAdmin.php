@@ -16,26 +16,31 @@ require_once 'controlador/usuariosAdminControl.php';
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
 </head>
 <body>
-    <div>
+<div>
         <nav class="navbar navbar-expand navbar-dark" id="navbar">
             <div class="container-fluid">
                 <div class="collapse navbar-collapse" id="navbarScroll">
-                <img src="./img/collab.png" alt="" width="100" height="50">
-                    <ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 100px;">
-                    <li class="nav-item">
-                        <a class="nav-link active; text-white" aria-current="page" href="inicioAdmin.php">Clientes</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link active; text-white" aria-current="page" href="usuariosAdmin.php">Usuarios</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link active; text-white" href="alquilerAdmin.php">Alquiler</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link active; text-white" href="#">Autos</a>
-                    </li>
-                    </ul>
-                    <a class="navbar-brand" > <h4 class="fw-bold; text-white">Bienvenida</h4></a>
+                    <img src="./img/collab.png" alt="" width="100" height="50">
+                        <ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 100px;" id="menu">
+                            <li class="nav-item">
+                                <a class="nav-link active; text-light; fs-5" aria-current="page" href="inicioAdmin.php">Clientes</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link active; text-white; fs-5" aria-current="page" href="usuariosAdmin.php">Usuarios</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link active; text-white; fs-5" href="alquilerAdmin.php">Alquiler</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link active; text-white; fs-5" href="autoAdmin.php">Autos</a>
+                            </li>
+                        </ul>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false"> <h4 class="fw-bold; text-white">Bienvenida</h4></a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="indexLogin.html">Cerrar Sesión</a></li>
+                            </ul>
+                        </li>
                 </div>
             </div>
         </nav>

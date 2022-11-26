@@ -1,10 +1,20 @@
 #navbar{
     background-color: #0B2545;
 }
+#menu{
+    color: white;
+}
 
 #boton{
     background-color: #8DA9C4;
     color: white;
+}
+#botonBien{
+    background-color: #8DA9C4;
+    color: white;
+    border-radius: 10px;
+    padding: 5px;
+
 }
 
 #tabla{
