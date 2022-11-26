@@ -11,7 +11,7 @@ require_once './controlador/nuevoClienteAdminControl.php';
     <title>Nuevo usuario</title>
 </head>
 <body>
-    <h2>Agregar un nuevo cliente</h2>
+    <h2>Agregar un nuevo Cliente</h2>
     <p>Llene el formulario para agregar un usuario a la base de datos</p>
     <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
     <div>
