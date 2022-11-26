@@ -10,7 +10,7 @@ require_once 'controlador/inicioAdminControl.php';
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- CSS only -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
-        <title>Bienvenida admin</title>
+        <title>Bienvenida admin - Usuarios</title>
     <!-- Option 1: Include in HTML -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
 </head>
@@ -40,21 +40,15 @@ require_once 'controlador/inicioAdminControl.php';
     </div>
     <br>
     <div>
-        <a href="nuevoClienteAdmin.php">
-            <button class="btn btn-primary" >Nuevo Cliente</button>
-        </a>
+        <button class="btn btn-primary">Nuevo Cliente</button>
     </div>
     <div>
         <table class="table table-striped">
             <thead>
             <tr>
                 <th scope="col">#</th>
-                <th scope="col">Nombre</th>
-                <th scope="col">Cedula</th>
-                <th scope="col">Dirección</th>
-                <th scope="col">Teléfono</th>
-                <th scope="col">Estado</th>
-                <th scope="col">Acciones</th>
+                <th scope="col">Usuario</th>
+                <th scope="col">Contraseña</th>
             </tr>
             </thead>
             <tbody>
@@ -62,12 +56,9 @@ require_once 'controlador/inicioAdminControl.php';
                     if($result -> num_rows > 0) {
                         while($row = $result -> fetch_assoc()){
                         echo '<tr>';
-                        echo '<td>' . $row['idCliente'] . '</td>';
-                        echo '<td>' . $row['nombresCli'] .'</td>';
-                        echo '<td>' . $row['cedula'] . '</td>';
-                        echo '<td>' . $row['direccion'] . '</td>';
-                        echo '<td>' . $row['telefono'] . '</td>';
-                        echo '<td>' . $row['telefono'] . '</td>';
+                        echo '<td>' . $row['id'] . '</td>';
+                        echo '<td>' . $row['nombreUsuario'] .'</td>';
+                        echo '<td>' . $row['contraseña'] . '</td>';
                         echo '<td>';
                         echo '<a href="leer.php?id=' . $row['idCliente'] . '"> 
                         <button type="button" class="btn btn-primary">
