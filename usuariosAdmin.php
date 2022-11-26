@@ -47,8 +47,8 @@ require_once 'controlador/inicioAdminControl.php';
             <thead>
             <tr>
                 <th scope="col">#</th>
-                <th scope="col">Usuario</th>
-                <th scope="col">Contraseña</th>
+                <th scope="col">usuario</th>
+                <th scope="col">contraseña</th>
             </tr>
             </thead>
             <tbody>
