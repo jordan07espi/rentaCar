@@ -10,7 +10,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     ) {
         
       
-        $imagenBytes=addslashes(file_get_contents($_FILES['foto']['tmp_name']));
+ 
       
         //construir la consulta
         $query = "INSERT INTO usuarios(nombreusuario, contraseña, estado) VALUES (?,?,?)";

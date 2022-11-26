@@ -45,10 +45,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
        
     
 
-        $imagenBytes=addslashes(file_get_contents($_FILES['foto']['tmp_name']));
-        //construir la consulta
-        $query = "UPDATE usuarios set nombreUsuario=?, contraseña=? WHERE id=?";
-        
 
         //preparar la consulta
         if ($stmt = $conn->prepare($query)) {
