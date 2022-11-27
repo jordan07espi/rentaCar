@@ -1,0 +1,27 @@
+#navbar{
+    background-color: #0B2545;
+}
+#menu{
+    color: white;
+}
+
+#boton{
+    background-color: #134074;
+    color: white;
+    margin: 10px;
+}
+
+#botonBien{
+    background-color: #8DA9C4;
+    color: white;
+    border-radius: 5px;
+    margin: 10px;
+    position: absolute left;
+}
+
+#tabla{
+    background-color: #8DA9C4;
+}
+#bordeTable{
+    margin: 20px;
+}

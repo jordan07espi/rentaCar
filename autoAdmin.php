@@ -1,5 +1,5 @@
 <?php
-require_once 'controlador/inicioAdminControl.php';
+require_once 'controlador/autoAdminControl.php';
 ?>
 
 <!DOCTYPE html>
@@ -48,8 +48,8 @@ require_once 'controlador/inicioAdminControl.php';
         </nav>
     </div>
     <div>
-        <a href="nuevoClienteAdmin.php">
-            <button class="btn" id="boton">Nuevo Cliente</button>
+        <a href="#">
+            <button class="btn" id="boton">Nuevo Auto</button>
         </a>
     </div>
     <div id="bordeTable">
@@ -57,11 +57,11 @@ require_once 'controlador/inicioAdminControl.php';
             <thead class="text-light" id="tabla">
             <tr>
                 <th scope="col">#</th>
-                <th scope="col">Nombre</th>
-                <th scope="col">Cedula</th>
-                <th scope="col">Dirección</th>
-                <th scope="col">Teléfono</th>
+                <th scope="col">Marca</th>
+                <th scope="col">Placa</th>
+                <th scope="col">Tipo</th>
                 <th scope="col">Estado</th>
+                <th scope="col">Estado Alquiler</th>
                 <th scope="col">Acciones</th>
             </tr>
             </thead>
@@ -70,19 +70,19 @@ require_once 'controlador/inicioAdminControl.php';
                     if($result -> num_rows > 0) {
                         while($row = $result -> fetch_assoc()){
                         echo '<tr>';
-                        echo '<td>' . $row['idCliente'] . '</td>';
-                        echo '<td>' . $row['nombresCli'] .'</td>';
-                        echo '<td>' . $row['cedula'] . '</td>';
-                        echo '<td>' . $row['direccion'] . '</td>';
-                        echo '<td>' . $row['telefono'] . '</td>';
-                        echo '<td>' . $row['telefono'] . '</td>';
+                        echo '<td>' . $row['idauto'] . '</td>';
+                        echo '<td>' . $row['marca'] .'</td>';
+                        echo '<td>' . $row['placa'] . '</td>';
+                        echo '<td>' . $row['tipo'] . '</td>';
+                        echo '<td>' . $row['estado'] . '</td>';
+                        echo '<td>' . $row['estadoAlquiler'] . '</td>';
                         echo '<td>';
-                        echo '<a href="leer.php?id=' . $row['idCliente'] . '"> 
+                        echo '<a href="leer.php?id=' . $row['idauto'] . '"> 
                         <button type="button" class="btn btn-primary">
                         <i class="bi bi-pencil-square" ></i>
                         </button>
                         </a>';
-                        echo '<a href="#?id=' . $row['idCliente'] . '"> 
+                        echo '<a href="#?id=' . $row['idauto'] . '"> 
                         <button type="button" class="btn btn-danger">
                         <i class="bi bi-trash-fill"></i>
                         </button>
@@ -98,6 +98,8 @@ require_once 'controlador/inicioAdminControl.php';
                 ?>
         </tbody>
         </table>
+    </div>
+
 
 
 
