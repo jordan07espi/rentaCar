@@ -1,6 +1,4 @@
 <?php
-   
-   
     require_once("./modelo/conexion.php");
 
     #se recogen los datos que llegan desde el formulario
@@ -21,9 +19,6 @@
     $resultado = $conn->query($sql);
     #se extraen los datos de la consulta
     $row = $resultado->fetch_assoc();
-
-    var_dump($row);
-   
     #se define el redireccionamiento según el nombre de rol
     $path_page = ["administrador"=>"inicioAdmin.php","empleado"=>"inicioEmpleado.php"];
 
