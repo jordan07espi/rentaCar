@@ -48,7 +48,7 @@ require_once 'controlador/inicioAdminControl.php';
         </nav>
     </div>
     <div>
-        <a href="nuevoClienteAdmin.php">
+        <a href="vistas/clientes/nuevoCliente.php">
             <button class="btn" id="boton">Nuevo Cliente</button>
         </a>
     </div>
@@ -61,7 +61,7 @@ require_once 'controlador/inicioAdminControl.php';
                 <th scope="col">Cedula</th>
                 <th scope="col">Dirección</th>
                 <th scope="col">Teléfono</th>
-                <th scope="col">Estado</th>
+               
                 <th scope="col">Acciones</th>
             </tr>
             </thead>
@@ -75,14 +75,14 @@ require_once 'controlador/inicioAdminControl.php';
                         echo '<td>' . $row['cedula'] . '</td>';
                         echo '<td>' . $row['direccion'] . '</td>';
                         echo '<td>' . $row['telefono'] . '</td>';
-                        echo '<td>' . $row['telefono'] . '</td>';
+                      
                         echo '<td>';
-                        echo '<a href="leer.php?id=' . $row['idCliente'] . '"> 
+                        echo '<a href="vistas/clientes/actualizarVista.php?id=' . $row['idCliente'] . '"> 
                         <button type="button" class="btn btn-primary">
                         <i class="bi bi-pencil-square" ></i>
                         </button>
                         </a>';
-                        echo '<a href="#?id=' . $row['idCliente'] . '"> 
+                        echo '<a href="./controlador/clientes/eliminarCliente.php?id=' . $row['idCliente'] . '"> 
                         <button type="button" class="btn btn-danger">
                         <i class="bi bi-trash-fill"></i>
                         </button>

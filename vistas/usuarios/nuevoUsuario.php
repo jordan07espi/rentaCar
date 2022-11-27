@@ -1,5 +1,5 @@
 <?php
-require_once './controlador/nuevoClienteAdminControl.php';
+require_once '../../controlador/usuarios/agregarUsuario.php';
 ?>
 <!-- FORMULARIO -->
 <!DOCTYPE html>
@@ -12,7 +12,7 @@ require_once './controlador/nuevoClienteAdminControl.php';
     <title>Nuevo usuario</title>
 </head>
 <body>
-    <h2>Agregar un nuevo Cliente</h2>
+    <h2>Agregar un nuevo Usuario</h2>
     <p>Llene el formulario para agregar un usuario a la base de datos</p>
     <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
     <div>
@@ -20,19 +20,12 @@ require_once './controlador/nuevoClienteAdminControl.php';
         <input type="text" name="nombre" required>
     </div>
     <div>
-        <label for="">Cedula</label>
-        <input type="text" name="cedula" required>
+        <label for="">Contraseña</label>
+        <input type="text" name="contraseña" required>
     </div>
-    <div>
-        <label for="">Direccion</label>
-        <input type="text" name="direccion" required>
-    </div>
-    <div>
-        <label for="">Telefono</label>
-        <input type="text" name="telefono" required>
-    </div>
+   
     <input type="submit" value="Agregar">
-    <a href="inicioAdmin.php">Cancelar</a>  
+    <a href="../../usuariosAdmin.php">Cancelar</a>  
     </form>
 </body>
 </html>

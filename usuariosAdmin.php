@@ -1,5 +1,5 @@
 <?php
-require_once 'controlador/usuariosAdminControl.php';
+require_once './controlador/usuariosAdminControl.php';
 ?>
 
 <!DOCTYPE html>
@@ -48,7 +48,7 @@ require_once 'controlador/usuariosAdminControl.php';
         </nav>
     </div>
     <div>
-        <button class="btn" id="boton">Nuevo Usuario</button>
+       <a href="vistas/usuarios/nuevoUsuario.php"><button class="btn" id="boton">Nuevo Usuario</button></a> 
     </div>
     <div id="bordeTable">
         <table class="table table-striped">
@@ -69,12 +69,12 @@ require_once 'controlador/usuariosAdminControl.php';
                         echo '<td>' . $row['nombreUsuario'] .'</td>';
                         echo '<td>' . $row['contraseña'] . '</td>';
                         echo '<td>';
-                        echo '<a href="leer.php?id=' . $row['id'] . '"> 
+                        echo '<a href="vistas/usuarios/actualizarVista.php?id=' . $row['id'] . '"> 
                         <button type="button" class="btn btn-primary">
                         <i class="bi bi-pencil-square" ></i>
                         </button>
                         </a>';
-                        echo '<a href="#?id=' . $row['id'] . '"> 
+                        echo '<a href="./controlador/usuarios/eliminarUsuario.php?id=' . $row['id'] . '"> 
                         <button type="button" class="btn btn-danger">
                         <i class="bi bi-trash-fill"></i>
                         </button>

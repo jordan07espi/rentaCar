@@ -48,7 +48,7 @@ require_once 'controlador/alquilerAdminControl.php';
         </nav>
     </div>
     <div>
-        <a href="#">
+        <a href="vistas/alquiler/nuevoAlquiler.php">
             <button class="btn" id="boton">Nuevo Alquiler</button>
         </a>
     </div>
@@ -57,6 +57,8 @@ require_once 'controlador/alquilerAdminControl.php';
             <thead class="text-light" id="tabla">
             <tr>
                 <th scope="col">#</th>
+                <th scope="col">Cliente</th>
+                <th scope="col">Marca</th>
                 <th scope="col">Fecha Alquiler</th>
                 <th scope="col">Fecha Devolucion</th>
                 <th scope="col">Precio</th>
@@ -69,6 +71,8 @@ require_once 'controlador/alquilerAdminControl.php';
                         while($row = $result -> fetch_assoc()){
                         echo '<tr>';
                         echo '<td>' . $row['idAlquiler'] . '</td>';
+                        echo '<td>' . $row['nombresCli'] .'</td>';
+                        echo '<td>' . $row['marca'] .'</td>';
                         echo '<td>' . $row['fechaAlquiler'] .'</td>';
                         echo '<td>' . $row['fechaDevolucion'] . '</td>';
                         echo '<td>' . $row['Precio'] . '</td>';

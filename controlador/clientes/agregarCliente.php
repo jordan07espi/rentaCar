@@ -5,30 +5,31 @@ require_once '../../modelo/conexion.php';
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     //verificar que existen datos en las variales enviadas
     if (
-        isset($_POST['nombre']) && isset($_POST['contraseña'])
+        isset($_POST['nombre']) && isset($_POST['cedula'])  && isset($_POST['direccion'])  && isset($_POST['telefono'])
        
     ) {
         
       
  
-        $estado=1;
+    
         //construir la consulta
-        $query = "INSERT INTO usuarios(nombreusuario, contraseña, estado) VALUES (?,?,?)";
+        $query = "INSERT INTO cliente(nombresCli, cedula, direccion, telefono ) VALUES (?,?,?,?)";
 
         //preparar la consulta
         if ($stmt = $conn->prepare($query)) {
             $stmt->bind_param(
-                'ssi',
+                'ssss',
                 $_POST['nombre'],
-                $_POST['contraseña'],
-                $estado
-               
-
+                $_POST['cedula'],
+                $_POST['direccion'],
+                $_POST['telefono']
+              
+        
             );
 
             //Ejecutar statement
             if ($stmt->execute()) {
-                header('location: ../../usuariosAdmin.php');
+                header('location: ../../inicioAdmin.php');
                 exit();
             } else {
                 echo "Error! El statement no se ejecutó";

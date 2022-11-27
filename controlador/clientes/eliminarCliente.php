@@ -2,12 +2,12 @@
 
 if(isset($_GET['id'])&& !empty(trim($_GET['id']))){
     require_once '../../modelo/conexion.php';
-    $query='UPDATE usuarios SET estado=0  WHERE id=?';
+    $query='DELETE FROM cliente WHERE idCliente=?';
     if($stmt=$conn-> prepare($query)){
         $stmt-> bind_param('i',  $_GET['id']);
         
         if($stmt->execute()){
-            header('location: ../../usuariosAdmin.php');
+            header('location: ../../inicioAdmin.php');
             exit(); 
 
         } else{

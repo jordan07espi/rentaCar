@@ -3,15 +3,17 @@ require_once '../../modelo/conexion.php';
 //Leer los datos y visualizarlos en los cuadros de texto para su edicion
 
 if(isset($_GET['id'])&& !empty(trim($_GET['id']))){
-    $query='SELECT * FROM usuarios WHERE id=?';
+    $query='SELECT * FROM cliente WHERE idCliente=?';
     if($stmt=$conn-> prepare($query)){
         $stmt-> bind_param('i', $_GET['id']);
         if($stmt-> execute()){
             $result=$stmt -> get_result();
             if($result->num_rows==1){
                 $row=$result-> fetch_array(MYSQLI_ASSOC);
-                $nombre= $row['nombreUsuario'];
-                $contrasenia= $row['contraseña'];
+                $nombre= $row['nombresCli'];
+                $cedula= $row['cedula'];
+                $direccion= $row['direccion'];
+                $telefono= $row['telefono'];
                 
                
             }else {
@@ -41,24 +43,26 @@ if(isset($_GET['id'])&& !empty(trim($_GET['id']))){
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     //verificar que existen datos en las variales enviadas
     if (
-        isset($_POST['nombre']) && isset($_POST['contraseña']) 
+        isset($_POST['nombre']) && isset($_POST['cedula'])  && isset($_POST['direccion'])  && isset($_POST['telefono'])
     ) {
        
     
-        $query = "UPDATE usuarios set nombreUsuario=?, contraseña=? WHERE id=?";
+        $query = "UPDATE cliente set nombresCli=?, cedula=?,direccion=?,telefono=? WHERE idCliente=?";
 
         //preparar la consulta
         if ($stmt = $conn->prepare($query)) {
             $stmt->bind_param(
-                'ssi',
+                'ssssi',
                 $_POST['nombre'],
-                $_POST['contraseña'],
+                $_POST['cedula'],
+                $_POST['direccion'],
+                $_POST['telefono'],
                 $_GET['id']
             );
 
             //Ejecutar statement
             if ($stmt->execute()) {
-                header('location:  ../../usuariosAdmin.php');
+                header('location:  ../../inicioAdmin.php');
                 exit();
             } else {
                 echo "Error! El statement no se ejecutó";
