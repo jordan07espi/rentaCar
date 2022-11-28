@@ -64,7 +64,7 @@
             <input class="btn btn-success text-white mb-2 " type="submit" name="submit" value="Actualizar">
             </div> 
             <div class="col-sm-2">
-            <a  class="btn btn-secondary text-white mb-2" href="../../alquilerAdmin.php">Atrás</a>
+            <a class="btn btn-secondary text-white mb-2" href="../../alquilerAdmin.php">Atrás</a>
             </div>
         </div>
    </form>
