@@ -23,6 +23,9 @@ require_once '../../controlador/usuarios/agregarUsuario.php';
         <label for="">Contraseña</label>
         <input type="text" name="contraseña" required>
     </div>
+    <div>
+        <input type="file" name="foto" required>
+    </div>
    
     <input type="submit" value="Agregar">
     <a href="../../usuariosAdmin.php">Cancelar</a>  
