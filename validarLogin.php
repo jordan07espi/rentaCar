@@ -26,7 +26,11 @@
     if($resultado->num_rows>0 ){
         #se redirecciona a la página correspondiente
         header("Location:".$path_page[$row['nombreRol']]);
-    } 
+    }
+    else {
+        echo "<p>Error a iniciar sesións</p>";
+        header("location:indexLogin.html");
+    }
 
 
 
