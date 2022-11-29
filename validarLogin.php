@@ -20,10 +20,12 @@
     #se extraen los datos de la consulta
     $row = $resultado->fetch_assoc();
     #se define el redireccionamiento según el nombre de rol
-    $path_page = ["administrador"=>"inicioAdmin.php","empleado"=>"inicioEmpleado.php"];
+    $path_page = ["administrador"=>"inicioAdmin.php","empleado"=>"inicioAdmin.php"];
 
     #se controla si la consulta devuelve algún resultado
     if($resultado->num_rows>0 ){
+        session_start();
+        $_SESSION['id']=$row['id'];
         #se redirecciona a la página correspondiente
         header("Location:".$path_page[$row['nombreRol']]);
     }
