@@ -52,7 +52,7 @@ require_once 'controlador/autoAdminControl.php';
         </nav>
     </div>
     <div>
-        <a href="#">
+        <a href="vistas/autos/nuevoAuto.php">
             <button class="btn" id="boton">Nuevo Auto</button>
         </a>
     </div>
@@ -86,7 +86,7 @@ require_once 'controlador/autoAdminControl.php';
                         <i class="bi bi-pencil-square" ></i>
                         </button>
                         </a>';
-                        echo '<a href="#?id=' . $row['idauto'] . '"> 
+                        echo '<a href="controlador/auto/eliminarAuto.php?id=' . $row['idauto'] . '"> 
                         <button type="button" class="btn btn-danger">
                         <i class="bi bi-trash-fill"></i>
                         </button>

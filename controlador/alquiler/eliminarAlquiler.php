@@ -1,19 +1,23 @@
 <?php
+#llamada al archivo de conexión
+require_once '../../modelo/conexion.php';
 
+#control de id que llegue por el método GET
 if(isset($_GET['id'])&& !empty(trim($_GET['id']))){
-    require_once '../../modelo/conexion.php';
-    $query='UPDATE usuarios SET estado=0  WHERE id=?';
+    
+    $query='DELETE FROM alquiler  WHERE idAlquiler=?';
     if($stmt=$conn-> prepare($query)){
         $stmt-> bind_param('i',  $_GET['id']);
         
         if($stmt->execute()){
-            header('location: ../../usuariosAdmin.php');
+            header('location: ../../alquilerAdmin.php');
             exit(); 
 
         } else{
             echo  'Error!, no se ejecuto la consulta a la base de datos';
             exit();
         }
+        $stmt->close();
     }
 
     
@@ -22,4 +26,6 @@ if(isset($_GET['id'])&& !empty(trim($_GET['id']))){
 }else{
     echo "Error!, Por favor intente mas tarde";
 }
-?>
+
+
+

@@ -81,12 +81,12 @@ require_once 'controlador/alquilerAdminControl.php';
                         echo '<td>' . $row['fechaDevolucion'] . '</td>';
                         echo '<td>' . $row['Precio'] . '</td>';
                         echo '<td>';
-                        echo '<a href="leer.php?id=' . $row['idAlquiler'] . '"> 
+                        echo '<a href="vistas/alquiler/actualizarVista.php?id=' . $row['idAlquiler'] . '"> 
                         <button type="button" class="btn btn-primary">
                         <i class="bi bi-pencil-square" ></i>
                         </button>
                         </a>';
-                        echo '<a href="#?id=' . $row['idAlquiler'] . '"> 
+                        echo '<a href="controlador/alquiler/eliminarAlquiler.php?id=' . $row['idAlquiler'] . '"> 
                         <button type="button" class="btn btn-danger">
                         <i class="bi bi-trash-fill"></i>
                         </button>
