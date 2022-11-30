@@ -77,7 +77,7 @@ require_once '../../controlador/usuarios/agregarUsuario.php';
             <input class="btn btn-primary" id="agregar" type="submit" value="Actualizar">
             <br>
             <br>
-            <a href="../../inicioAdmin.php"><button type="button" class="btn btn-danger">Cancelar</button></a>
+            <a href="../../usuariosAdmin.php"><button type="button" class="btn btn-danger">Cancelar</button></a>
         </fieldset>
 
     </form>
