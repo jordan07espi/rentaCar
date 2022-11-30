@@ -1,4 +1,8 @@
 <?php
+session_start();
+if (!isset($_SESSION['id'])){
+	header("location:validarLogin.php");
+}
 require_once 'controlador/autoAdminControl.php';
 ?>
 
@@ -39,7 +43,7 @@ require_once 'controlador/autoAdminControl.php';
                         <li class="nav-item dropdown; position-absolute top-0 end-0" id="botonBien">
                                 <a class="nav-link dropdown-toggle; fs-5" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false" id="menu">Bienvenido Admin</a>
                                 <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" href="indexLogin.html">Cerrar Sesión</a></li>
+                                <li><a class="dropdown-item" href="cerrarSesion.php">Cerrar Sesión</a></li>
                                 </ul>
                         </li>
                     </ul>
@@ -48,7 +52,7 @@ require_once 'controlador/autoAdminControl.php';
         </nav>
     </div>
     <div>
-        <a href="#">
+        <a href="vistas/autos/nuevoAuto.php">
             <button class="btn" id="boton">Nuevo Auto</button>
         </a>
     </div>
@@ -82,7 +86,7 @@ require_once 'controlador/autoAdminControl.php';
                         <i class="bi bi-pencil-square" ></i>
                         </button>
                         </a>';
-                        echo '<a href="#?id=' . $row['idauto'] . '"> 
+                        echo '<a href="controlador/auto/eliminarAuto.php?id=' . $row['idauto'] . '"> 
                         <button type="button" class="btn btn-danger">
                         <i class="bi bi-trash-fill"></i>
                         </button>

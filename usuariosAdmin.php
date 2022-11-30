@@ -1,4 +1,8 @@
 <?php
+session_start();
+if (!isset($_SESSION['id'])){
+	header("location:validarLogin.php");
+}
 require_once './controlador/usuariosAdminControl.php';
 ?>
 
@@ -39,7 +43,7 @@ require_once './controlador/usuariosAdminControl.php';
                         <li class="nav-item dropdown; position-absolute top-0 end-0" id="botonBien">
                                 <a class="nav-link dropdown-toggle; fs-5" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false" id="menu">Bienvenido Admin</a>
                                 <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" href="indexLogin.html">Cerrar Sesión</a></li>
+                                <li><a class="dropdown-item" href="cerrarSesion.php">Cerrar Sesión</a></li>
                                 </ul>
                         </li>
                     </ul>

@@ -1,5 +1,10 @@
 <?php
+   session_start();
+   if (!isset($_SESSION['id'])){
+	header("location:validarLogin.php");
+}
    require_once '../../controlador/usuarios/actualizarUsuario.php';
+   
  ?>
 
 <!DOCTYPE html>
