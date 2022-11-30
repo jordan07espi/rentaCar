@@ -1,11 +1,7 @@
 <?php
    require_once '../../controlador/alquiler/actualizarAlquiler.php';
 
-   /*           $nombreCli       = $row['nombresCli'];
-                $marcaAuto       = $row['marca'];
-                $fechaAlquiler   = $row['fechaAlquiler'];
-                $fechaDevolucion = $row['fechaDevolucion'];
-                $precioAlquiler  = $row['Precio']; */
+   /*            */
  ?>
 
 <!DOCTYPE html>
