@@ -35,7 +35,7 @@ require_once '../../controlador/usuarios/actualizarUsuario.php';
             <nav class="navbar navbar-expand navbar-dark" id="navbar">
                 <div class="container-fluid">
                     <div class="collapse navbar-collapse" id="navbarScroll">
-                        <img src="./img/collab.png" alt="" width="100" height="50">
+                    <img src="../../img/collab.png" alt="" width="100" height="50">
                         <ul class="nav nav-pills">
                             <li class="nav-item">
                                 <a class="nav-link active; text-white; fs-5" aria-current="page" href="../../inicioAdmin.php" id="menu">Clientes</a>
