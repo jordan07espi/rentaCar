@@ -67,7 +67,7 @@ require_once 'controlador/autoAdminControl.php';
                 <th scope="col">Tipo</th>
                 <th scope="col">Estado</th>
                 <th scope="col">Estado Alquiler</th>
-                <th scope="col">Acciones</th>
+                <th scope="col">Accioness</th>
             </tr>
             </thead>
             <tbody>
