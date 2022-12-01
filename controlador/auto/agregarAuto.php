@@ -33,8 +33,15 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         } else {
             echo "Error en la preparación del statement";
         }
+<<<<<<< HEAD
     
 }else{
    /*  echo "No llegaron los datos del método POST"; */
+=======
+        $conn -> close();
+    }else{
+        //echo "no llenaron los datos por el metodo POST";
+    }
+>>>>>>> Steven
 }
 ?>

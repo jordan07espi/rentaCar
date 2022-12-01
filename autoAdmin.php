@@ -82,7 +82,11 @@ require_once 'controlador/autoAdminControl.php';
                         echo '<td>' . $row['estado'] . '</td>';
                         echo '<td>' . $row['estadoAlquiler'] . '</td>';
                         echo '<td>';
+<<<<<<< HEAD
                         echo '<a href="leer.php?id=' . $row['idauto'] . '"> 
+=======
+                        echo '<a href="vistas/autos/actualizarVista.php?id=' . $row['idauto'] . '"> 
+>>>>>>> Steven
                         <button type="button" class="btn btn-primary">
                         <i class="bi bi-pencil-square" ></i>
                         </button>
