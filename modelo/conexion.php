@@ -1,7 +1,7 @@
 <?php
-    define('SERVERNAME','localhost');
+    define('SERVERNAME','localhost:3308');
     define('USERNAME','root');
-    define('PASSWORD','admin');
+    define('PASSWORD','');
     define('DBNAME','rentacar');
     
     //Creación de la conexión a la base de datos usando mysqli
