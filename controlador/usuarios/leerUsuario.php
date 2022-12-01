@@ -1,5 +1,5 @@
 <?php
-require_once '././modelo/conexion.php';
+require_once '../../modelo/conexion.php';
 if(isset($_GET['id'])&& !empty(trim($_GET['id']))){
 $query='SELECT * FROM usuarios WHERE id=?';
 if($stmt=$conn-> prepare($query)){

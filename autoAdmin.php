@@ -87,6 +87,11 @@ require_once 'controlador/autoAdminControl.php';
                         <i class="bi bi-pencil-square" ></i>
                         </button>
                         </a>';
+                        echo '<a href="vistas/autos/leerAuto.php?id=' . $row['idauto'] . '"> 
+                        <button type="button" class="btn btn-success">
+                        <i class="bi bi-eye-fill"></i>
+                        </button>
+                        </a>';
                         echo '<a href="controlador/auto/eliminarAuto.php?id=' . $row['idauto'] . '"> 
                         <button type="button" class="btn btn-danger">
                         <i class="bi bi-trash-fill"></i>
