@@ -13,19 +13,25 @@
     #consulta de id de usuario, nombre de usuario, idrol de rolesusuarios,id de rol y nombreRol de roles.
     $sql = "SELECT u.id,u.nombreUsuario,ru.idRol idrol,r.id,r.nombreRol FROM usuarios u 
     INNER JOIN rolesusuarios ru ON (u.id = ru.idusuario) INNER JOIN roles r ON (idrol=r.id)
-    WHERE u.nombreUsuario = '$usuario' AND u.contraseña ='$contraseña';";
+    WHERE u.nombreUsuario = '$usuario' AND u.contraseña ='$contraseña' AND estado=1;";
 
     #se ejecuta la consulta
     $resultado = $conn->query($sql);
     #se extraen los datos de la consulta
     $row = $resultado->fetch_assoc();
     #se define el redireccionamiento según el nombre de rol
-    $path_page = ["administrador"=>"inicioAdmin.php","empleado"=>"inicioAdmin.php"];
+    $path_page = ["administrador"=>"inicioAdmin.php","empleado"=>"inicioAdmin.php","cliente"=>""];
 
+    $render_opcion_nav = ["administrador"=>"<li class='nav-item'>                     
+                        <a class='nav-link active; text-white; 
+                        fs-5' aria-current='page' href='usuariosAdmin.php' id='menu'>Usuarios</a>
+                            </li>","empleado"=>""];
     #se controla si la consulta devuelve algún resultado
     if($resultado->num_rows>0 ){
         session_start();
-        $_SESSION['id']=$row['id'];
+        $_SESSION['id']            =  $row['id'];
+        $_SESSION['nombreRol']     =  $render_opcion_nav[$row['nombreRol']];
+        $_SESSION['nombreUsuario'] =  $row['nombreUsuario'];
         #se redirecciona a la página correspondiente
         header("Location:".$path_page[$row['nombreRol']]);
     }

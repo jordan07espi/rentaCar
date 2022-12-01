@@ -1,4 +1,4 @@
---- login
-SELECT u.id,u.nombreUsuario,ru.idRol idrol,r.id,r.nombreRol FROM usuarios u 
-    INNER JOIN rolesusuarios ru ON (u.id = ru.idusuario) INNER JOIN roles r ON (idrol=r.id)
-    WHERE u.nombreUsuario = 'empleado' AND u.contraseña ='543';
+--- loginf
+SELECT u.id ,u.nombreUsuario,ru.idRol ,r.id idrol,r.nombreRol FROM usuarios u 
+    INNER JOIN rolesusuarios ru ON (u.id = ru.idusuario) INNER JOIN roles r ON (ru.idRol=idrol)
+    WHERE u.nombreUsuario = 'root' AND u.contraseña ='1234';
