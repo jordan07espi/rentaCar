@@ -1,5 +1,5 @@
 <?php
-require_once('../../controlador/auto/agregarAuto.php');
+require_once('../../controlador/auto/LeerAuto.php');
 ?>
 <!-- FORMULARIO -->
 <!DOCTYPE html>
@@ -54,46 +54,30 @@ require_once('../../controlador/auto/agregarAuto.php');
     <br>
     <br>
     <center>
-        <h2 id="titulo">Nuevo Auto</h2>
+        <h2 id="titulo">Información de Autos</h2>
     </center>
     <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post" enctype="multipart/form-data">
 
         <fieldset>
-            <legend><span class="number">1</span>Llene todos los campos para agregar un nuevo Auto</legend>
+            <legend> <legend><center><img id="imagenesLeer" src="data:image/jpg;base64,<?php echo  base64_encode($foto); ?>"></center></legend>
 
             <label>Marca</label>
-            <i class="bi bi-person-fill"></i>
-            <input name="marca" class="form-control" placeholder="Marca" type="text" id="floatingInput" required>
+            <p class="text-center form-control"><?php echo $marca?></p>
 
             <label>Placa</label>
-            <i class="bi bi-person-fill"></i>
-            <input name="placa" class="form-control" placeholder="Placa" type="text" id="floatingInput" required>
+            <p class="text-center form-control"><?php echo $placa?></p>
 
             <label>Tipo</label>
-            <i class="bi bi-person-fill"></i>
-            <input name="tipo" class="form-control" placeholder="Tipo" type="text" id="floatingInput" required>
+            <p class="text-center form-control"><?php echo $tipo?></p>
 
             <label>Estado</label>
-            <i class="bi bi-person-fill"></i>
-            <input name="estado" class="form-control" placeholder="Estado" type="text" id="floatingInput" required>
+            <p class="text-center form-control"><?php echo $estado?></p>
 
-            <label>Estado de Auto</label>
-            <i class="bi bi-person-fill"></i>
-            <select name="estadoAlquiler">
-                <option selected value="1">Activo</option>
-                <option value="0">Inactivo</option>
-            </select>
-            <br>
-            <br>
-            <div class="form-group">
-                <input type="file" name="fotoAuto" class="form-control"  required>
-            </div>
-            <br>
-            <br>
-            <input class="btn btn-primary" id="agregar" type="submit" value="Agregar">
-            <br>
-            <br>
-            <a href="../../autoAdmin.php"><button type="button" class="btn btn-danger">Cancelar</button></a>
+            <label>Estado Alquiler</label>
+            <p class="text-center form-control"><?php echo $estadoAlquiler?></p>
+
+            
+            <a href="../../autoAdmin.php"><button type="button" class="btn btn-danger">Regresar</button></a>
         </fieldset>
 
     </form>

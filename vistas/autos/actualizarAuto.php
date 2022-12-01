@@ -1,5 +1,5 @@
 <?php
-require_once('../../controlador/auto/agregarAuto.php');
+require_once('../../controlador/auto/actualizarAuto.php');
 ?>
 <!-- FORMULARIO -->
 <!DOCTYPE html>
@@ -18,7 +18,7 @@ require_once('../../controlador/auto/agregarAuto.php');
     <!-- Option 1: Include in HTML -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
 
-    <title>Nuevo cliente</title>
+    <title>Actualizar Auto</title>
 </head>
 
 <body>
@@ -54,7 +54,7 @@ require_once('../../controlador/auto/agregarAuto.php');
     <br>
     <br>
     <center>
-        <h2 id="titulo">Nuevo Auto</h2>
+        <h2 id="titulo">Actualizar Auto</h2>
     </center>
     <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post" enctype="multipart/form-data">
 
@@ -63,19 +63,19 @@ require_once('../../controlador/auto/agregarAuto.php');
 
             <label>Marca</label>
             <i class="bi bi-person-fill"></i>
-            <input name="marca" class="form-control" placeholder="Marca" type="text" id="floatingInput" required>
+            <input name="marca" class="form-control" placeholder="Marca" type="text" id="floatingInput" value="<?php echo $marca;?>" required>
 
             <label>Placa</label>
             <i class="bi bi-person-fill"></i>
-            <input name="placa" class="form-control" placeholder="Placa" type="text" id="floatingInput" required>
+            <input name="placa" class="form-control" placeholder="Placa" type="text" id="floatingInput" value="<?php echo $placa;?>" required>
 
             <label>Tipo</label>
             <i class="bi bi-person-fill"></i>
-            <input name="tipo" class="form-control" placeholder="Tipo" type="text" id="floatingInput" required>
+            <input name="tipo" class="form-control" placeholder="Tipo" type="text" id="floatingInput" value="<?php echo $tipo;?>" required>
 
             <label>Estado</label>
             <i class="bi bi-person-fill"></i>
-            <input name="estado" class="form-control" placeholder="Estado" type="text" id="floatingInput" required>
+            <input name="estado" class="form-control" placeholder="Estado" type="text" id="floatingInput" value="<?php echo $estado;?>" required>
 
             <label>Estado de Auto</label>
             <i class="bi bi-person-fill"></i>
@@ -86,11 +86,11 @@ require_once('../../controlador/auto/agregarAuto.php');
             <br>
             <br>
             <div class="form-group">
-                <input type="file" name="fotoAuto" class="form-control"  required>
+                <input type="file" name="fotoAuto" class="form-control"   required>
             </div>
             <br>
             <br>
-            <input class="btn btn-primary" id="agregar" type="submit" value="Agregar">
+            <input class="btn btn-primary" id="agregar" type="submit" value="Actualizar">
             <br>
             <br>
             <a href="../../autoAdmin.php"><button type="button" class="btn btn-danger">Cancelar</button></a>

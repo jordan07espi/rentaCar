@@ -124,3 +124,9 @@ form {
     }
   
   }
+
+  #imagenesLeer{
+    width:100px; ;
+    height:100px; 
+    align-items: center;
+  }
