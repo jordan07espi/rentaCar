@@ -59,7 +59,7 @@ require_once('../../controlador/auto/actualizarAuto.php');
     <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post" enctype="multipart/form-data">
 
         <fieldset>
-            <legend><span class="number">1</span>Llene todos los campos para agregar un nuevo Auto</legend>
+            <legend><span class="number">1</span>Llene todos los campos para actualizar un nuevo Auto</legend>
 
             <label>Marca</label>
             <i class="bi bi-person-fill"></i>
