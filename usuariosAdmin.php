@@ -1,5 +1,9 @@
 <?php
-require_once 'controlador/usuariosAdminControl.php';
+session_start();
+if (!isset($_SESSION['id'])){
+	header("location:validarLogin.php");
+}
+require_once './controlador/usuariosAdminControl.php';
 ?>
 
 <!DOCTYPE html>
@@ -37,9 +41,11 @@ require_once 'controlador/usuariosAdminControl.php';
                     </ul>
                     <ul class="nav nav-pills">
                         <li class="nav-item dropdown; position-absolute top-0 end-0" id="botonBien">
-                                <a class="nav-link dropdown-toggle; fs-5" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false" id="menu">Bienvenido Admin</a>
+                                <a class="nav-link dropdown-toggle; fs-5" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false" id="menu">Bienvenido 
+                                <?php echo $_SESSION['nombreUsuario']; ?></a>
+                                </a>
                                 <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" href="indexLogin.html">Cerrar Sesión</a></li>
+                                <li><a class="dropdown-item" href="cerrarSesion.php">Cerrar Sesión</a></li>
                                 </ul>
                         </li>
                     </ul>
@@ -48,7 +54,7 @@ require_once 'controlador/usuariosAdminControl.php';
         </nav>
     </div>
     <div>
-        <button class="btn" id="boton">Nuevo Usuario</button>
+       <a href="vistas/usuarios/nuevoUsuario.php"><button class="btn" id="boton">Nuevo Usuario</button></a> 
     </div>
     <div id="bordeTable">
         <table class="table table-striped">
@@ -69,12 +75,12 @@ require_once 'controlador/usuariosAdminControl.php';
                         echo '<td>' . $row['nombreUsuario'] .'</td>';
                         echo '<td>' . $row['contraseña'] . '</td>';
                         echo '<td>';
-                        echo '<a href="leer.php?id=' . $row['id'] . '"> 
+                        echo '<a href="vistas/usuarios/actualizarVista.php?id=' . $row['id'] . '"> 
                         <button type="button" class="btn btn-primary">
                         <i class="bi bi-pencil-square" ></i>
                         </button>
                         </a>';
-                        echo '<a href="#?id=' . $row['id'] . '"> 
+                        echo '<a href="./controlador/usuarios/eliminarUsuario.php?id=' . $row['id'] . '"> 
                         <button type="button" class="btn btn-danger">
                         <i class="bi bi-trash-fill"></i>
                         </button>
