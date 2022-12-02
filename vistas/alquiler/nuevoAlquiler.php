@@ -85,7 +85,7 @@ require_once '../../controlador/alquiler/agregarAlquiler.php';
 
                 </select>
             </div>
-            <label>Marca Auto</label>
+            <label>Placa Auto</label>
             <i class="bi bi-person-fill"></i>
             <div class="form-control" readonly id="floatingInput">
                 <select name="marca">
@@ -93,7 +93,7 @@ require_once '../../controlador/alquiler/agregarAlquiler.php';
                     if ($result2->num_rows > 0) {
                         while ($row = $result2->fetch_assoc()) {
 
-                            echo '<option value="' . $row['idauto'] . '">' . $row['marca'] . '</option>';
+                            echo '<option value="' . $row['idauto'] . '">'. $row['placa'].'<img id="imagenesLeer"  src="data:image/jpg;base64,'.base64_encode($row['fotoAuto'] ).'"></option>';
                         }
                         $result2->free();
                     } else {
@@ -111,14 +111,14 @@ require_once '../../controlador/alquiler/agregarAlquiler.php';
                 <label >Fecha Alquiler</label>
                 <i class="bi bi-person-fill"></i>
 
-                <input name="fechaAlquiler" class="form-control" type="text" id="floatingInput" required>
+                <input name="fechaAlquiler" class="form-control" type="date" id="floatingInput" required>
             </div>
         
             <div >
                 <label >Fecha Devolución</label>
                 <i class="bi bi-person-fill"></i>
 
-                <input name="fechaDevolucion" class="form-control" type="text" id="floatingInput"   required>
+                <input name="fechaDevolucion" class="form-control" type="date" id="floatingInput"   required>
 
             </div>
         

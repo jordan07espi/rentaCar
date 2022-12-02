@@ -73,8 +73,10 @@ require_once 'controlador/inicioAdminControl.php';
             </thead>
             <tbody>
                 <?php
+                
                     if($result -> num_rows > 0) {
                         while($row = $result -> fetch_assoc()){
+
                         echo '<tr>';
                         echo '<td>' . $row['idCliente'] . '</td>';
                         echo '<td>' . $row['nombresCli'] .'</td>';

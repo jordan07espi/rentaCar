@@ -15,8 +15,8 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
         include_once('../../modelo/conexion.php');             
 
         //Verificar si los datos de las variables estan enviadas
-        if(isset($_POST['marca']) && isset($_POST['placa']) && isset($_POST['tipo']) && isset($_POST['estado']) && 
-            isset($_POST['estadoAlquiler'])){
+        if(isset($_POST['marca']) && isset($_POST['placa']) && isset($_POST['tipo']) && isset($_POST['estado']) 
+            ){
 
             //Variables
             $marca=$_POST['marca'];
