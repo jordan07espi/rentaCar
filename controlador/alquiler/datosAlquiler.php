@@ -4,6 +4,6 @@ require_once '../../modelo/conexion.php';
 $query = "SELECT * FROM cliente;";
 $result = $conn -> query($query);
 
-$query2 = "SELECT * FROM auto;";
+$query2 = "SELECT * FROM auto WHERE estadoAlquiler=0;";
 $result2 = $conn -> query($query2);
 ?>

@@ -29,9 +29,8 @@ require_once 'controlador/autoAdminControl.php';
                         <li class="nav-item">
                             <a class="nav-link active; text-white; fs-5" aria-current="page" href="inicioAdmin.php" id="menu">Clientes</a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link active; text-white; fs-5" aria-current="page" href="usuariosAdmin.php" id="menu">Usuarios</a>
-                        </li>
+                        <!-- render de nav de CRUD usuarios -->
+                        <?php $renderOption=$_SESSION['nombreRol'];  echo $renderOption; ?>
                         <li class="nav-item">
                             <a class="nav-link active; text-white; fs-5" href="alquilerAdmin.php" id="menu">Alquiler</a>
                         </li>
@@ -41,7 +40,9 @@ require_once 'controlador/autoAdminControl.php';
                     </ul>
                     <ul class="nav nav-pills">
                         <li class="nav-item dropdown; position-absolute top-0 end-0" id="botonBien">
-                                <a class="nav-link dropdown-toggle; fs-5" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false" id="menu">Bienvenido Admin</a>
+                                <a class="nav-link dropdown-toggle; fs-5" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false" id="menu">Bienvenido 
+                                <?php echo $_SESSION['nombreUsuario']; ?></a>
+                                </a>
                                 <ul class="dropdown-menu">
                                 <li><a class="dropdown-item" href="cerrarSesion.php">Cerrar Sesión</a></li>
                                 </ul>
@@ -66,7 +67,7 @@ require_once 'controlador/autoAdminControl.php';
                 <th scope="col">Tipo</th>
                 <th scope="col">Estado</th>
                 <th scope="col">Estado Alquiler</th>
-                <th scope="col">Acciones</th>
+                <th scope="col">Accioness</th>
             </tr>
             </thead>
             <tbody>

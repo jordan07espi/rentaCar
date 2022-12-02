@@ -74,7 +74,7 @@ $stmt = $conn->prepare($query_update);
 
     if ($stmt->execute()) {
         $path_location = "../../alquilerAdmin.php";
-        exit();
+        
     }
 } else {
     /* echo "Error! El statement no se ejecutó"; */

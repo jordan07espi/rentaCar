@@ -41,7 +41,9 @@ require_once './controlador/usuariosAdminControl.php';
                     </ul>
                     <ul class="nav nav-pills">
                         <li class="nav-item dropdown; position-absolute top-0 end-0" id="botonBien">
-                                <a class="nav-link dropdown-toggle; fs-5" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false" id="menu">Bienvenido Admin</a>
+                                <a class="nav-link dropdown-toggle; fs-5" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false" id="menu">Bienvenido 
+                                <?php echo $_SESSION['nombreUsuario']; ?></a>
+                                </a>
                                 <ul class="dropdown-menu">
                                 <li><a class="dropdown-item" href="cerrarSesion.php">Cerrar Sesión</a></li>
                                 </ul>

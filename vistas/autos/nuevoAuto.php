@@ -77,12 +77,8 @@ require_once('../../controlador/auto/agregarAuto.php');
             <i class="bi bi-person-fill"></i>
             <input name="estado" class="form-control" placeholder="Estado" type="text" id="floatingInput" required>
 
-            <label>Estado de Auto</label>
-            <i class="bi bi-person-fill"></i>
-            <select name="estadoAlquiler">
-                <option selected value="1">Activo</option>
-                <option value="0">Inactivo</option>
-            </select>
+           
+           
             <br>
             <br>
             <div class="form-group">
