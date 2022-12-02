@@ -1,5 +1,5 @@
 <?php 
-require_once '../../modelo/conexion.php';
+
 if(isset($_GET['id']) && !empty(trim($_GET['id']))){
     $query = 'SELECT * FROM auto WHERE idauto=?';
     if($stmt = $conn->prepare($query)){
