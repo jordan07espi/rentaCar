@@ -1,26 +1,22 @@
-<?php require_once '../../modelo/conexion.php';
-
-//verificar si los datos fueron enviados por el método post
-if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-    //verificar que existen datos en las variales enviadas
+<?php 
+//Verificar si los canpos son enviados
+if($_SERVER['REQUEST_METHOD'] == 'POST'){
     $for_update = array_filter($_POST,function($k){
         return $k!=='Agregar';
         },ARRAY_FILTER_USE_KEY);
- 
 
-        //construir la consulta
-        $query = "INSERT INTO auto(marca, placa, tipo, estado, estadoAlquiler ) VALUES (?,?,?,?,?)";
+    //Revisar imagen
+    $revisar = getimagesize($_FILES["fotoAuto"]["tmp_name"]);
+    if($revisar !== false){
+        $image = $_FILES['fotoAuto']['tmp_name'];
+        $fotografia = addslashes(file_get_contents($image));
 
-        //preparar la consulta
-        if ($stmt = $conn->prepare($query)) {
-            $stmt->bind_param(
-                'ssssi',
-                $for_update['marca'],
-                $for_update['placa'],
-                $for_update['tipo'],
-                $for_update['estado'],
-                $for_update['estadoAlquiler']   
-            );
+        //Conexion a la base de datos
+        include_once('../../modelo/conexion.php');             
+
+        //Verificar si los datos de las variables estan enviadas
+        if(isset($_POST['marca']) && isset($_POST['placa']) && isset($_POST['tipo']) && isset($_POST['estado']) && 
+            isset($_POST['estadoAlquiler'])){
 
             //Variables
             $marca=$_POST['marca'];
@@ -43,5 +39,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     }else{
         //echo "no llenaron los datos por el metodo POST";
     }
+}
 
 ?>

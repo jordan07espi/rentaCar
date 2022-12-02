@@ -99,3 +99,5 @@ require_once('../../controlador/auto/actualizarAuto.php');
 
     </form>
 </body>
+
+</html>
