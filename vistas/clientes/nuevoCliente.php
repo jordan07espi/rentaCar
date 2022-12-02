@@ -22,7 +22,7 @@ require_once '../../controlador/clientes/agregarCliente.php';
     <!-- Option 1: Include in HTML -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
 
-    <title>Nuevo usuario</title>
+    <title>Nuevo cliente</title>
 </head>
 <body> 
 <div>
@@ -83,7 +83,7 @@ require_once '../../controlador/clientes/agregarCliente.php';
             <i class="bi bi-telephone-fill"></i>
             <input name="telefono" class="form-control" placeholder="Télefono"  type="text" id="floatingInput"   required>
  
-            <input class="btn btn-primary"  id="agregar" type="submit" value="Actualizar">
+            <input class="btn btn-primary"  id="agregar" type="submit" value="Agregar">
             <br>
             <br>
             <a href="../../inicioAdmin.php"><button type="button" class="btn btn-danger">Cancelar</button></a>

@@ -58,6 +58,12 @@ require_once 'controlador/autoAdminControl.php';
         </a>
     </div>
     <div id="bordeTable">
+    <?php if (isset($_SESSION['msg-error-delete-auto'])){
+            echo '<div class="alert alert-warning alert-dismissible fade show" role="alert">'
+            .$_SESSION['msg-error-delete-auto'].
+            '<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+          </div>';unset($_SESSION['msg-error-delete-auto']);
+        }  ?>
         <table class="table table-striped">
             <thead class="text-light" id="tabla">
             <tr>
@@ -70,6 +76,7 @@ require_once 'controlador/autoAdminControl.php';
                 <th scope="col">Accioness</th>
             </tr>
             </thead>
+
             <tbody>
                 <?php $count = 0;
                     if($result -> num_rows > 0) {

@@ -1,23 +1,17 @@
-<?php
+<?php 
 require_once '../../modelo/conexion.php';
-
-
-
-
-
-
 
 //verificar si los datos fueron enviados por el método post
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     //verificar que existen datos en las variales enviadas
     if (
-        isset($_POST['cliente']) && isset($_POST['marca'])  && isset($_POST['fechaAlquiler'])  && isset($_POST['fechaDevolucion']) && isset($_POST['precio'])
+        isset($_POST['cliente']) && isset($_POST['idauto'])  && isset($_POST['fechaAlquiler'])  && isset($_POST['fechaDevolucion']) && isset($_POST['precio'])
        
     ) {
         
       
  
-       $usuario=1;
+       $usuario=$_SESSION['id'] ;
         //construir la consulta
         $query = "INSERT INTO alquiler(idCliente, idAuto, idUsuario, fechaAlquiler, fechaDevolucion, Precio ) VALUES (?,?,?,?,?,?)";
 
@@ -26,7 +20,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             $stmt->bind_param(
                 'iiissd',
                 $_POST['cliente'],
-                $_POST['marca'],
+                $_POST['idauto'],
                 $usuario,
                 $_POST['fechaAlquiler'],
                 $_POST['fechaDevolucion'],
@@ -35,8 +29,14 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         
             );
 
+
             //Ejecutar statement
             if ($stmt->execute()) {
+                $estadoAlquilar= 1;
+                $query2 = "UPDATE auto SET estadoAlquiler=? WHERE idauto=?";
+                $stmt2 = $conn->prepare($query2);
+                $stmt2->bind_param('ii',$estadoAlquilar,$_POST['idauto']);
+                $stmt2->execute();
                 header('location: ../../alquilerAdmin.php');
                 exit();
             } else {

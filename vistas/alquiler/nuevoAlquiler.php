@@ -62,7 +62,7 @@ require_once '../../controlador/alquiler/agregarAlquiler.php';
     </div>
     <br>
     <center>
-        <h2 id="titulo">Actualizar alquiler</h2>
+        <h2 id="titulo">Nuevo alquiler</h2>
     </center>
     <form action="<?php echo $_SERVER['REQUEST_URI'] ?>" method="post" enctype="multipart/form-data">
         <fieldset>
@@ -86,10 +86,10 @@ require_once '../../controlador/alquiler/agregarAlquiler.php';
 
                 </select>
             </div>
-            <label>Marca Auto</label>
+            <label>Placa Auto</label>
             <i class="bi bi-person-fill"></i>
             <div class="form-control" readonly id="floatingInput">
-                <select name="marca">
+                <select name="idauto">
                     <?php
                     if ($result2->num_rows > 0) {
                         while ($row = $result2->fetch_assoc()) {
@@ -114,21 +114,25 @@ require_once '../../controlador/alquiler/agregarAlquiler.php';
                 <label >Fecha Alquiler</label>
                 <i class="bi bi-person-fill"></i>
 
-                <input name="fechaAlquiler" class="form-control" type="text" id="floatingInput" required>
+                <input value="'.$date_now.'" 
+                min ="'.$date_now.'" max="'.$date_now.'"
+                name="fechaAlquiler" class="form-control" type="date" id="floatingInput" required>
             </div>
         
             <div >
                 <label >Fecha Devolución</label>
                 <i class="bi bi-person-fill"></i>
 
-                <input name="fechaDevolucion" class="form-control" type="text" id="floatingInput"   required>
+                <input name="fechaDevolucion" class="form-control" type="date" value="'.$date_now.'"
+                min="'.$date_now.'" max="'.$plus_to_month.'"
+                id="floatingInput"   required>
 
             </div>
         
             <label >Precio</label>
             <i class="bi bi-person-fill"></i>
             <div class="col-md-6 inputGroupContainer">
-                    <input name="precio" class="form-control" type="text" id="floatingInput"  required>
+                    <input name="precio" class="form-control"  type="text" id="floatingInput"  required>
             </div>
             <input class="btn btn-primary"  id="agregar" type="submit" value="Agregar">
             <br>

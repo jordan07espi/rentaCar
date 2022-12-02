@@ -78,7 +78,7 @@ require_once '../../controlador/usuarios/actualizarUsuario.php';
 
             <label>Contraseña</label>
             <i class="bi bi-lock-fill"></i>
-            <input name="contraseña" class="form-control" placeholder="Contraseña" type="text" id="floatingInput" value="<?php echo $contrasenia ?>" required>
+            <input name="contraseña" class="form-control" placeholder="Contraseña" type="password" id="floatingInput" value="<?php echo $contrasenia ?>" required>
 
             <input class="btn btn-primary" id="agregar" type="submit" value="Actualizar">
             <br>

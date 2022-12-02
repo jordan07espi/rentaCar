@@ -82,11 +82,11 @@ if (!isset($_SESSION['id'])) {
             <i class="bi bi-person-fill"></i>
             <input name="estado" class="form-control" placeholder="Estado" type="text" id="floatingInput" value="<?php echo $estado;?>" required>
 
-            <label>Estado de Auto</label>
+            <label>Estado de alquiler</label>
             <i class="bi bi-person-fill"></i>
             <select name="estadoAlquiler">
-                <option selected value="1">Activo</option>
-                <option value="0">Inactivo</option>
+                <option selected value="1">Alquilado</option>
+                <option value="0">No alquilado</option>
             </select>
             <br>
             <br>

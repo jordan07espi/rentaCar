@@ -84,15 +84,24 @@
                 <label >Fecha Alquiler</label>
                 <i class="bi bi-person-fill"></i>
 
-                <input name="fechaAlquiler" class="form-control" type="text" id="floatingInput" value="<?php  echo $fechaAlquiler ?>" required>
+                <input 
+                readonly
+                name="fechaAlquiler" class="form-control" type="text" id="floatingInput" value="<?php  echo $fechaAlquiler ?>" required>
             </div>
         
             <div >
                 <label >Fecha Devolución</label>
                 <i class="bi bi-person-fill"></i>
 
-                <input name="fechaDevolucion" class="form-control" type="text" id="floatingInput" value="<?php  echo $fechaDevolucion ?>"  required>
-
+             <?php
+             date_default_timezone_set('America/Bogota');
+             $date_now         = date('Y-m-d', time());
+             $plus_to_month    = date("Y-m-d",strtotime($date_now ."+ 2 month"));
+             
+             echo  '<input name="fechaDevolucion" class="form-control" type="date" value="'.$fechaDevolucion.'"
+                min="'.$date_now.'" max="'.$plus_to_month.'"
+                id="floatingInput"   required>'
+            ?>
             </div>
         
             <label >Precio</label>
