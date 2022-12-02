@@ -1,2 +1,3 @@
 #se ignora el directorio modelo
 modelo/
+login_dql.sql
