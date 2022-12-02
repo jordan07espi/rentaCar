@@ -118,6 +118,16 @@ header("Location:".$path_location);
 ?>
 =======
 <?php 
+
+$estadosAlquiler = [0=>'select name="estadoAlquiler">
+                            <option selected value="1">Activo</option>
+                            <option value="0">Inactivo</option>
+                            </select>',
+                    1=>'select name="estadoAlquiler">
+                            <option selected value="1">Activo</option>
+                            <option value="0">Inactivo</option>
+                        </select>'];
+
 require_once '../../modelo/conexion.php';
 if(isset($_GET['id']) && !empty(trim($_GET['id']))){
     $query = 'SELECT * FROM auto WHERE idauto=?';
@@ -147,6 +157,9 @@ if(isset($_GET['id']) && !empty(trim($_GET['id']))){
     echo'Error, intente más tarde';
     exit();
 }
+
+
+
 //Verificar si los canpos son enviados
 $path_location ='';
 if($_SERVER['REQUEST_METHOD']=='POST'){
@@ -160,25 +173,29 @@ $for_update = array_filter($_POST,function($k){
     if($revisar !== false){
         $image = $_FILES['fotoAuto']['tmp_name'];
         $fotografia = addslashes(file_get_contents($image));
-
-        //Conexion a la base de datos
-        include_once('../../modelo/conexion.php');             
+          
 
         //Verificar si los datos de las variables estan enviadas
         if(isset($_POST['marca']) && isset($_POST['placa']) && isset($_POST['tipo']) && isset($_POST['estado']) && 
             isset($_POST['estadoAlquiler'])){
 
             //Variables
-            $marca=$_POST['marca'];
-            $placa=$_POST['placa'];
-            $tipo=$_POST['tipo'];
-            $estado=$_POST['estado'];
-            $estadoAlquiler=$_POST['estadoAlquiler'];
+            $marca=$_POST['marca'];//s
+            $placa=$_POST['placa'];//s
+            $tipo=$_POST['tipo'];//s
+            $estado=$_POST['estado'];//s
+            $estadoAlquiler=$_POST['estadoAlquiler'];//i
 
             //Contruir la consulta
-            $query_update = "UPDATE auto SET marca=?,placa=?,tipo=?,estado=?,estadoAlquiler=?,fotoAuto=$fotografia
+            $query_update = "UPDATE auto SET marca=?,placa=?,tipo=?,estado=?,estadoAlquiler=?,fotoAuto=?
                 WHERE idauto=?";
 
+            $stmt = $conn->prepare($query_update);
+
+            $stmt->bind_param('ssssibi',$marca,$placa,$tipo,$estado,$estadoAlquiler,$fotografia,$_GET['id']);
+
+            $stmt->execute();
+            $stmt->close();
             //Redireccionar
             header("location: ../../autoAdmin.php");
 

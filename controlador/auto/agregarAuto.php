@@ -22,16 +22,22 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                 $for_update['estadoAlquiler']   
             );
 
-            //Ejecutar statement
-            if ($stmt->execute()) {
-                header('location: ../../autoAdmin.php');
-                exit();
-            } else {
-                echo "Error! El statement no se ejecutó";
-            }
-            $stmt->close();
-        } else {
-            echo "Error en la preparación del statement";
+            //Variables
+            $marca=$_POST['marca'];
+            $placa=$_POST['placa'];
+            $tipo=$_POST['tipo'];
+            $estado=$_POST['estado'];
+            $estadoAlquiler=0;
+
+            //Contruir la consulta
+            $consulta = $conn->query("INSERT INTO auto(marca, placa, tipo, estado, estadoAlquiler, fotoAuto) 
+            VALUES ('$marca', '$placa', '$tipo', '$estado', '$estadoAlquiler', '$fotografia')");
+
+            //Redireccionar
+            header("location: ../../autoAdmin.php");
+
+        }else{
+            echo "No se estan llenando todos los datos";
         }
         $conn -> close();
     }else{
