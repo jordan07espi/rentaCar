@@ -92,11 +92,40 @@ require_once 'controlador/autoAdminControl.php';
                         <i class="bi bi-eye-fill"></i>
                         </button>
                         </a>';
-                        echo '<a href="controlador/auto/eliminarAuto.php?id=' . $row['idauto'] . '"> 
-                        <button type="button" class="btn btn-danger">
+                       
+                        
+
+                        echo '<button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#exampleModal'.$row['idauto'] .'">
                         <i class="bi bi-trash-fill"></i>
-                        </button>
-                        </a>';
+                  </button>
+                  
+                  <!-- Modal -->
+                  <div class="modal fade" id="exampleModal'.$row['idauto'] .'" tabindex="-1" aria-labelledby="exampleModalLabel'.$row['idauto'] .'" aria-hidden="true">
+                    <div class="modal-dialog">
+                      <div class="modal-content">
+                        <div class="modal-header">
+                          <h1 class="modal-title fs-5 text-dark" id="exampleModalLabel'.$row['idauto'] .'">Confirmación</h1>
+                          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                          <p class="text-dark">¿Está seguro que desea eliminar el registro?</p>
+                        </div>
+                        <div class="modal-footer">
+                          
+                          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"><a class="btn btn-info"  
+                          href="controlador/auto/eliminarAuto.php?id=' . $row['idauto']  . '"> Aceptar</a></button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>';
+                       
+
+
+
+
+
+
+
                         echo '</td>';
                         echo '</tr>';
                         }

@@ -86,11 +86,40 @@ require_once 'controlador/alquilerAdminControl.php';
                         <i class="bi bi-pencil-square" ></i>
                         </button>
                         </a>';
-                        echo '<a href="controlador/alquiler/eliminarAlquiler.php?id=' . $row['idAlquiler'] . '"> 
-                        <button type="button" class="btn btn-danger">
+                       
+                        
+
+                        echo '<button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#exampleModal'.$row['idAlquiler'] .'">
                         <i class="bi bi-trash-fill"></i>
-                        </button>
-                        </a>';
+                  </button>
+                  
+                  <!-- Modal -->
+                  <div class="modal fade" id="exampleModal'.$row['idAlquiler'] .'" tabindex="-1" aria-labelledby="exampleModalLabel'.$row['idAlquiler'] .'" aria-hidden="true">
+                    <div class="modal-dialog">
+                      <div class="modal-content">
+                        <div class="modal-header">
+                          <h1 class="modal-title fs-5 text-dark" id="exampleModalLabel'.$row['idAlquiler'] .'">Confirmación</h1>
+                          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                          <p class="text-dark">¿Está seguro que desea eliminar el registro?</p>
+                        </div>
+                        <div class="modal-footer">
+                          
+                          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"><a class="btn btn-info"  
+                          <a href="controlador/alquiler/eliminarAlquiler.php?id=' . $row['idAlquiler'] . '"> Aceptar</a></button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>';
+
+
+
+
+
+
+
+
                         echo '</td>';
                         echo '</tr>';
                         }
