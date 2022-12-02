@@ -1,5 +1,9 @@
 <?php
 require_once('../../controlador/auto/actualizarAuto.php');
+session_start();
+if (!isset($_SESSION['id'])) {
+    header("location:../../indexLogin.html");
+}
 ?>
 <!-- FORMULARIO -->
 <!DOCTYPE html>
@@ -41,12 +45,13 @@ require_once('../../controlador/auto/actualizarAuto.php');
                     </li>
                 </ul>
                 <ul class="nav nav-pills">
-                    <li class="nav-item dropdown; position-absolute top-0 end-0" id="botonBien">
-                        <a class="nav-link dropdown-toggle; fs-5" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false" id="menu">Bienvenido Admin</a>
-                        <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="cerrarSesion.php">Cerrar Sesión</a></li>
-                        </ul>
-                    </li>
+                        <li class="nav-item dropdown; position-absolute top-0 end-0" id="botonBien">
+                                <a class="nav-link dropdown-toggle; fs-5" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false" id="menu">Bienvenido 
+                                <?php echo $_SESSION['nombreUsuario']; ?></a>
+                                <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="../../cerrarSesion.php">Cerrar Sesión</a></li>
+                                </ul>
+                        </li>
                 </ul>
             </div>
         </div>
@@ -56,7 +61,7 @@ require_once('../../controlador/auto/actualizarAuto.php');
     <center>
         <h2 id="titulo">Actualizar Auto</h2>
     </center>
-    <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post" enctype="multipart/form-data">
+    <form action="<?php echo $_SERVER['REQUEST_URI']; ?>" method="post" enctype="multipart/form-data">
 
         <fieldset>
             <legend><span class="number">1</span>Llene todos los campos para agregar un nuevo Auto</legend>
@@ -99,5 +104,6 @@ require_once('../../controlador/auto/actualizarAuto.php');
 
     </form>
 </body>
-
+<!-- JavaScript Bundle with Popper -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
 </html>

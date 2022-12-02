@@ -1,16 +1,18 @@
 <?php 
 
-$estadosAlquiler = [0=>'select name="estadoAlquiler">
+/* $estadosAlquiler = [0=>'select name="estadoAlquiler">
                             <option selected value="1">Activo</option>
                             <option value="0">Inactivo</option>
                             </select>',
                     1=>'select name="estadoAlquiler">
                             <option selected value="1">Activo</option>
                             <option value="0">Inactivo</option>
-                        </select>'];
+                        </select>']; */
 
 require_once '../../modelo/conexion.php';
+
 if(isset($_GET['id']) && !empty(trim($_GET['id']))){
+    $id = $_GET['id'];
     $query = 'SELECT * FROM auto WHERE idauto=?';
     if($stmt = $conn->prepare($query)){
         $stmt-> bind_param('i', $_GET['id']);
@@ -26,17 +28,18 @@ if(isset($_GET['id']) && !empty(trim($_GET['id']))){
                 $foto = $row['fotoAuto'];
             }else {
                 echo'Error no existe resultado paresta consulta';
-                exit();
+               
             }
         }else {
             echo'NO se ejecuto la consulta';
-            exit();
+          
         }
     }
     $stmt ->close();
+   
 }else {
     echo'Error, intente más tarde';
-    exit();
+    
 }
 
 
@@ -44,11 +47,6 @@ if(isset($_GET['id']) && !empty(trim($_GET['id']))){
 //Verificar si los canpos son enviados
 $path_location ='';
 if($_SERVER['REQUEST_METHOD']=='POST'){
-$for_update = array_filter($_POST,function($k){
-            return $k!=='cliente-name' && $k!=='submit' && $k!=='marca-name';
-            },ARRAY_FILTER_USE_KEY);
-
-
     //Revisar imagen
     $revisar = getimagesize($_FILES["fotoAuto"]["tmp_name"]);
     if($revisar !== false){
@@ -66,26 +64,22 @@ $for_update = array_filter($_POST,function($k){
             $tipo=$_POST['tipo'];//s
             $estado=$_POST['estado'];//s
             $estadoAlquiler=$_POST['estadoAlquiler'];//i
-
+            
             //Contruir la consulta
-            $query_update = "UPDATE auto SET marca=?,placa=?,tipo=?,estado=?,estadoAlquiler=?,fotoAuto=?
-                WHERE idauto=?";
+            $query_update = "UPDATE auto SET marca='$marca',placa='$placa',tipo='$tipo',estado='$estado',estadoAlquiler='$estadoAlquiler',
+            fotoAuto= '$fotografia' WHERE idauto='$id'";
 
-            $stmt = $conn->prepare($query_update);
-
-            $stmt->bind_param('ssssibi',$marca,$placa,$tipo,$estado,$estadoAlquiler,$fotografia,$_GET['id']);
-
-            $stmt->execute();
-            $stmt->close();
+             $conn->query($query_update); 
             //Redireccionar
-            header("location: ../../autoAdmin.php");
-
+           header("location: ../../autoAdmin.php"); 
+               
+           
         }else{
             echo "No se estan llenando todos los datos";
         }
         $conn -> close();
     }else{
-        //echo "no llenaron los datos por el metodo POST";
+    //echo "no llenaron los datos por el metodo POST"; */
     }
 }
 

@@ -1,7 +1,7 @@
 <?php
 session_start();    
-if (!isset($_SESSION['id'])){
-	header("location:validarLogin.php");
+if (!isset($_SESSION['id'])) {
+    header("location:../../indexLogin.html");
 }
     require_once('../../controlador/auto/actualizarAuto.php');
 ?>

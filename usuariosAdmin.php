@@ -67,11 +67,11 @@ require_once './controlador/usuariosAdminControl.php';
             </tr>
             </thead>
             <tbody>
-                <?php
+                <?php $count = 0;
                     if($result -> num_rows > 0) {
                         while($row = $result -> fetch_assoc()){
                         echo '<tr>';
-                        echo '<td>' . $row['id'] . '</td>';
+                        echo '<td>' . ++$count . '</td>';
                         echo '<td>' . $row['nombreUsuario'] .'</td>';
                         echo '<td>' . $row['contraseña'] . '</td>';
                         echo '<td>';

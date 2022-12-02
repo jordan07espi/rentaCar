@@ -71,11 +71,11 @@ require_once 'controlador/autoAdminControl.php';
             </tr>
             </thead>
             <tbody>
-                <?php
+                <?php $count = 0;
                     if($result -> num_rows > 0) {
                         while($row = $result -> fetch_assoc()){
                         echo '<tr>';
-                        echo '<td>' . $row['idauto'] . '</td>';
+                        echo '<td>' . ++$count. '</td>';
                         echo '<td>' . $row['marca'] .'</td>';
                         echo '<td>' . $row['placa'] . '</td>';
                         echo '<td>' . $row['tipo'] . '</td>';

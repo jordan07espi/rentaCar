@@ -72,11 +72,11 @@ require_once 'controlador/inicioAdminControl.php';
             </tr>
             </thead>
             <tbody>
-                <?php
+                <?php $count = 0;
                     if($result -> num_rows > 0) {
                         while($row = $result -> fetch_assoc()){
                         echo '<tr>';
-                        echo '<td>' . $row['idCliente'] . '</td>';
+                        echo '<td>' . ++$count. '</td>';
                         echo '<td>' . $row['nombresCli'] .'</td>';
                         echo '<td>' . $row['cedula'] . '</td>';
                         echo '<td>' . $row['direccion'] . '</td>';
