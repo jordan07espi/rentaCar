@@ -1,39 +1,46 @@
 <?php
-$user=$_POST ['usuario'];
-$pass=$_POST['contraseña'];
+   
+   
+    require_once("./modelo/conexion.php");
 
-if(isset($user)){
-    //proceso de conexion a la base de datos
-    
-    //varable de conexion
-    $servername= "localhost";
-    $username= "root";
-    $password= "";
-    $dbname= "rentacar";
-    
-    //crear una conexion a la base de datos
-    $con = mysqli_connect($servername, $username, $password, $dbname) or die ("Error en la conexión");
-    //consultar si los datos son los que estan en la base
-    $consulta= "SELECT*FROM usuarios WHERE nombreUsuario='$user' AND contraseña = '$pass'";
-    //ejecutar la consulta
-    $resultados= mysqli_query($con, $consulta) or die (mysqli_connect_errno ());
-    //alamacenar los datos en un arreglo
-    $fila = mysqli_fetch_array($resultados);
-    //controlar si llegan datos desde la consulta
-    if($fila['id']==null){
-        //redirigir al login
-        header("location:indexLogin.html");
-    }else{
-        //crear la sesion
-        SESSION_START();
-        //definir las variables de sesion y redirigimos a una pagina de usuario
-        $_SESSION['id']= $fila['id'];
-        $_SESSION['nombre']= $fila['nombreUsuario'];
-        header("location:inicioAdmin.php");
-    }
+    #se recogen los datos que llegan desde el formulario
+    $user_for_login = array_filter($_POST,function($current){
+        #se controla que sea diferente de Login
+        return $current!=='Login';
+    },ARRAY_FILTER_USE_BOTH);
 
-}else{
-    header("location:indexLogin.html");
-}
+    #se extraen en variables los datos del usuario que llegan del formulario de inicio de sesión
+    extract($user_for_login);
+
+    #consulta de id de usuario, nombre de usuario, idrol de rolesusuarios,id de rol y nombreRol de roles.
+    $sql = "SELECT u.id,u.nombreUsuario,ru.idRol idrol,r.id,r.nombreRol FROM usuarios u 
+    INNER JOIN rolesusuarios ru ON (u.id = ru.idusuario) INNER JOIN roles r ON (idrol=r.id)
+    WHERE u.nombreUsuario = '$usuario' AND u.contraseña ='$contraseña';";
+
+    #se ejecuta la consulta
+    $resultado = $conn->query($sql);
+    #se extraen los datos de la consulta
+    $row = $resultado->fetch_assoc();
+
+    var_dump($row);
+   
+    #se define el redireccionamiento según el nombre de rol
+    $path_page = ["administrador"=>"inicioAdmin.php","empleado"=>"inicioEmpleado.php"];
+
+    #se controla si la consulta devuelve algún resultado
+    if($resultado->num_rows>0 ){
+        #se redirecciona a la página correspondiente
+        header("Location:".$path_page[$row['nombreRol']]);
+    } 
+
+
+
+   /*    */
+
+
+
+
+
+
 ?>
 
