@@ -63,24 +63,27 @@ require_once './controlador/usuariosAdminControl.php';
                 <th scope="col">#</th>
                 <th scope="col">usuario</th>
                 <th scope="col">contraseña</th>
+                <th scope="col">estado</th>
                 <th scope="col">Acciones</th>
             </tr>
             </thead>
             <tbody>
-                <?php $count = 0;
+                <?php $count = 0; $op = [0=>"active",1=>"deactive"];
                     if($result -> num_rows > 0) {
                         while($row = $result -> fetch_assoc()){
+                          
                         echo '<tr>';
                         echo '<td>' . ++$count . '</td>';
                         echo '<td>' . $row['nombreUsuario'] .'</td>';
                         echo '<td>' . $row['contraseña'] . '</td>';
+                        echo '<td>' . $row['estado'] . '</td>';
                         echo '<td>';
                         echo '<a href="vistas/usuarios/actualizarVista.php?id=' . $row['id'] . '"> 
                         <button type="button" class="btn btn-primary">
                         <i class="bi bi-pencil-square" ></i>
                         </button>
                         </a>';
-                        echo '<a href="./controlador/usuarios/eliminarUsuario.php?id=' . $row['id'] . '"> 
+                        echo '<a href="./controlador/usuarios/eliminarUsuario.php?id='.$row['id'].'&op='.$op[$row['estado']].'"> 
                         <button type="button" class="btn btn-danger">
                         <i class="bi bi-trash-fill"></i>
                         </button>

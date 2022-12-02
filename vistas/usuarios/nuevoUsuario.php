@@ -74,7 +74,7 @@ require_once '../../controlador/usuarios/agregarUsuario.php';
 
             <label>Contraseña</label>
             <i class="bi bi-lock-fill"></i>
-            <input name="contraseña" class="form-control" placeholder="Contraseña" type="text" id="floatingInput" required>
+            <input name="contraseña" class="form-control" placeholder="Contraseña" type="password" id="floatingInput" required>
 
             
             <div class="form-control" readonly id="floatingInput">
@@ -96,7 +96,7 @@ require_once '../../controlador/usuarios/agregarUsuario.php';
             </div>
             
             
-            <input class="btn btn-primary" id="agregar" type="submit" value="Actualizar">
+            <input class="btn btn-primary" id="agregar" type="submit" value="Agregar">
             <br>
             <br>
             <a href="../../usuariosAdmin.php"><button type="button" class="btn btn-danger">Cancelar</button></a>
