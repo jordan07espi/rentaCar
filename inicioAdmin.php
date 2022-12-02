@@ -75,6 +75,7 @@ require_once 'controlador/inicioAdminControl.php';
                 <?php $count = 0;
                     if($result -> num_rows > 0) {
                         while($row = $result -> fetch_assoc()){
+
                         echo '<tr>';
                         echo '<td>' . ++$count. '</td>';
                         echo '<td>' . $row['nombresCli'] .'</td>';

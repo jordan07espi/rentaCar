@@ -86,7 +86,7 @@ require_once '../../controlador/alquiler/agregarAlquiler.php';
 
                 </select>
             </div>
-            <label>Placa Auto</label>
+            <label>Marca Auto</label>
             <i class="bi bi-person-fill"></i>
             <div class="form-control" readonly id="floatingInput">
                 <select name="marca">
@@ -114,16 +114,14 @@ require_once '../../controlador/alquiler/agregarAlquiler.php';
                 <label >Fecha Alquiler</label>
                 <i class="bi bi-person-fill"></i>
 
-                <input name="fechaAlquiler" value="'.$date_now.'" class="form-control" type="date" id="floatingInput" readonly required>
+                <input name="fechaAlquiler" class="form-control" type="text" id="floatingInput" required>
             </div>
         
             <div >
                 <label >Fecha Devolución</label>
                 <i class="bi bi-person-fill"></i>
 
-                <input name="fechaDevolucion" class="form-control" type="date" value="'.$date_now.'"
-                min="'.$date_now.'" max="'.$plus_to_month.'"
-                id="floatingInput"   required>
+                <input name="fechaDevolucion" class="form-control" type="text" id="floatingInput"   required>
 
             </div>
         

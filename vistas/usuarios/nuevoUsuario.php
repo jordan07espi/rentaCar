@@ -3,6 +3,7 @@ session_start();
 if (!isset($_SESSION['id'])) {
     header("location:../../indexLogin.html");
 }
+require_once '../../controlador/usuarios/datosUsuario.php';
 require_once '../../controlador/usuarios/agregarUsuario.php';
 ?>
 
@@ -75,6 +76,26 @@ require_once '../../controlador/usuarios/agregarUsuario.php';
             <i class="bi bi-lock-fill"></i>
             <input name="contraseña" class="form-control" placeholder="Contraseña" type="text" id="floatingInput" required>
 
+            
+            <div class="form-control" readonly id="floatingInput">
+                <select name="rol">
+                    <?php
+                    if ($result->num_rows > 0) {
+                        while ($row = $result->fetch_assoc()) {
+
+                            echo '<option value="' . $row['id'] .'">'.$row['nombreRol'].'</option>';
+                        }
+                        $result->free();
+                    } else {
+                        echo '<p><em> No existen datos registrados</em></p>';
+                    }
+                    ?>
+
+
+                </select>
+            </div>
+            
+            
             <input class="btn btn-primary" id="agregar" type="submit" value="Actualizar">
             <br>
             <br>
