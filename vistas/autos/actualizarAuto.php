@@ -85,6 +85,7 @@ require_once('../../controlador/auto/actualizarAuto.php');
             </select>
             <br>
             <br>
+            <legend> <legend><center><img id="imagenesLeer" src="data:image/jpg;base64,<?php echo  base64_encode($foto); ?>"></center></legend>
             <div class="form-group">
                 <input type="file" name="fotoAuto" class="form-control"   required>
             </div>

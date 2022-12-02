@@ -23,7 +23,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
             $placa=$_POST['placa'];
             $tipo=$_POST['tipo'];
             $estado=$_POST['estado'];
-            $estadoAlquiler=$_POST['estadoAlquiler'];
+            $estadoAlquiler=0;
 
             //Contruir la consulta
             $consulta = $conn->query("INSERT INTO auto(marca, placa, tipo, estado, estadoAlquiler, fotoAuto) 
